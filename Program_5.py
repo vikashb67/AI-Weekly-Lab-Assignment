@@ -1,5 +1,5 @@
 # Function to display the room
-from random import random
+import random
 
 
 def display(room):
