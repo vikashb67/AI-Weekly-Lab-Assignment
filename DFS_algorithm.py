@@ -1,7 +1,4 @@
-from sklearn import tree
-
-
-def dfs_iterative(tree, start):
+def dfs_iterative(graph, start):
     visited = set()
     stack = [start]
 
@@ -10,8 +7,20 @@ def dfs_iterative(tree, start):
         if node not in visited:
             print(node, end=" ")
             visited.add(node)
-            # Add neighbors in reverse order to maintain left-to-right traversal
-            stack.extend(reversed(tree[node]))
+            # Add neighbors in reverse order to mimic recursive DFS
+            stack.extend(reversed(graph.get(node, [])))
 
-print("\nDFS Traversal (Iterative):")
-dfs_iterative(tree, 1)
+# Example adjacency list (graph)
+graph = {
+    1: [2, 3],
+    2: [4, 5],
+    3: [6, 7],
+    4: [],
+    5: [],
+    6: [],
+    7: []
+}
+
+# Run DFS starting from node 1
+print("DFS Traversal (Iterative):")
+dfs_iterative(graph, 1)
