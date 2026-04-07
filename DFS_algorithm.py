@@ -1,3 +1,6 @@
+from sklearn import tree
+
+
 def dfs_iterative(tree, start):
     visited = set()
     stack = [start]
